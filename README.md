@@ -4,7 +4,13 @@ Blender add-on.
 
 Add-on functionality
 -
+**Align Loop**
+
 Aligns selected loop by nearest object surface and moves proportionally neighbour vertices
+
+**Alingn Neighbour**
+
+Align all vertices which are neighbour to selected - lies less than on "radius" distance
 
 Blender version
 -
