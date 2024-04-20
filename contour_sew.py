@@ -16,7 +16,7 @@ bl_info = {
     "name": "Contour Sew",
     "description": "Aligns selected loop by nearest surface",
     "author": "Nikita Akimov, Paul Kotelevets",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 79, 0),
     "location": "View3D > Tool panel > 1D > Slope Loop",
     "doc_url": "https://github.com/Korchy/1d_contour_sew",
@@ -184,7 +184,9 @@ class ContourSew:
 
 class ContourSew_OT_align_loop(Operator):
     bl_idname = 'contour_sew.align_loop'
-    bl_label = 'Align Loop'
+    bl_label = 'Sew selection'
+    bl_description = ('Align the Z axis height of a selected vertices of an active object to the open edge of '
+                      'a passive object')
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
@@ -198,7 +200,9 @@ class ContourSew_OT_align_loop(Operator):
 
 class ContourSew_OT_align_neighbour(Operator):
     bl_idname = 'contour_sew.align_neighbour'
-    bl_label = 'Align Neighbour'
+    bl_label = 'Smooth Levels'
+    bl_description = ('Smooth the difference between levels of unselected part of a mesh in accordance with the '
+                      'selected one')
     bl_options = {'REGISTER', 'UNDO'}
 
     radius = FloatProperty(
